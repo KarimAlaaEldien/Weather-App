@@ -137,3 +137,9 @@
     background: var(--color-primary);
     color: var(--color-light);
   }
+@media  (max-width: 768px) {
+  .btnFind {
+    padding: 0 10px;
+  }
+
+}
