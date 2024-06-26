@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/logo.png" type="image/">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Weather</title>
+</head>
+
+<body>
+    <!-- ?========= Start Navbar ========= -->
+    <nav class="navbar navbar-expand-lg py-4 ">
+        <div class="container">
+            <a class="navbar-brand" href="/index.html">
+                <img src="./images/logo.png" alt="Weather logo" class="logo">
+                <div class="logo-info d-inline-block align-middle">
+                    <h1 class="site-title">Weather</h1>
+                    <span class="site-description">tagline goes here</span>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse mt-4 my-lg-0" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
+                    <li class="nav-item active"><a class="nav-link" href='/index.html'>Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">News</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Live cameras</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Photos</a></li>
+                    <li class="nav-item"><a class="nav-link" href='#'>Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ?========= Start hero ========= -->
+    <section class="hero ">
+        <div class=" container">
+            <form class="d-flex position-relative ">
+                <input id="searchInput" class="form-control w-100 py-3 rounded-5 my-input border-0" type="text"
+                    placeholder="Find your location...">
+                <button id="btnFind" class="btn btn-info position-absolute btnFind rounded-5"
+                    type="button">Find</button>
+            </form>
+        </div>
+    </section>
+    <div class="forecast-table">
+        <div class="container">
+            <div id="forecast" class="row  rounded-3 forecast-container">
+                <!--^ today -->
+                <div class="col-lg-4">
+                    <div class=" forecast today rounded  rounded-3 h-100">
+                        <div id="today" class="forecast-header px-3 d-flex justify-content-between">
+                            <span id="todayComponent"></span>
+                            <span id="dateComponent"></span>
+                        </div>
+                        <div id="current" class="forecast-content  px-3">
+                            <div id="location"></div>
+                            <div class="degree d-flex justify-content-between">
+                                <span class="temp">
+                                    <span id="temperature"></span>
+                                </span>
+                                <img id="iconComponent">
+                            </div>
+                            <p id="condition" class="fs-5"></p>
+                            <div class=" mt-4 d-flex justify-content-between moveElement">
+                                <div>
+                                    <i class="fa-solid fa-umbrella"></i>
+                                    <span id="firstIcon"></span>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-wind"></i>
+                                    <span id="secondIcon"></span>
+                                </div>
+                                <div>
+                                    <i class="fa-regular fa-compass"></i>
+                                    <span id="thirdIcon"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--^ tomorrow -->
+                <div id="tomorrow" class="col-lg-4 mt-3 mt-lg-0">
+                    <div class="text-center h-100 rounded-2 forecast tomorrow">
+                        <div class="forecast-header fw-semibold px-3">
+                            <div class="day"></div>
+                        </div>
+                        <div class="forecast-content px-3">
+                            <img class="icon-tomorrow">
+                            <div class="degree fs-2">
+                                <p class="m-0">
+                                    <span class="great fs-5 mb-0"></span>
+                                </p>
+                                <p class="m-0">
+                                    <span class="minor  fs-5"></span>
+                                </p>
+                            </div>
+                        </div>
+                        <p id="tomorrowCondition" class="fs-5"></p>
+                    </div>
+                </div>
+                <!--^ afterTomorrow -->
+                <div id="afterTomorrow" class="col-lg-4 mt-3 mt-lg-0">
+                    <div class="text-center h-100 rounded-2 forecast">
+                        <div class="forecast-header fw-semibold px-3">
+                            <div class="dayAfterTomorrow"></div>
+                        </div>
+                        <div class="forecast-content px-3">
+                            <img class="icon-after-tomorrow">
+                            <div class="degree fs-2">
+                                <p class="m-0">
+                                    <span class="great-after fs-5 mb-0"></span>
+                                </p>
+                                <p class="m-0">
+                                    <span class="minor-after  fs-5"></span>
+                                </p>
+                            </div>
+                        </div>
+                        <p id="afterTomorrowaCondition" class="fs-5">clear</p>
+                    </div>
+                </div>
+            </div>
+            <!-- ?========= Start Footer ========= -->
+            <footer class="footer">
+                <div class="container">
+                    <div class="row flex-column flex-md-row align-items-center mb-5 ">
+                        <div class="col-lg-8 ">
+                            <form class="d-flex position-relative ">
+                                <input id="searchInput"
+                                    class="form-control w-100 py-3 rounded-5 my-input border-0 inputDown my-input"
+                                    type="text" placeholder="Enter your email to subscribe...">
+                                <button id="btnFind" class="btn btn-info position-absolute btnFind rounded-5 text-white"
+                                    type="submit">Subscribe</button>
+                            </form>
+                        </div>
+                        <div class="col-lg-3  d-flex justify-content-center ms-lg-auto mt-4 mt-lg-0 pt-2 pt-lg-0">
+                            <div class="social-links">
+                                <a href="#" class=""><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="#" class=""><i class="fa-brands fa-twitter"></i></a>
+                                <a href="#" class=""><i class="fa-brands fa-google-plus"></i></a>
+                                <a href="#" class=""><i class="fa-brands fa-pinterest"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="fs-6 ">Copyright 2014 Company name. Designed by Themezy. All rights
+                        reserved</p>
+                </div>
+            </footer>
+
+            <!-- *============= JS FILES ============= -->
+            <script src="./js/bootstrap.bundle.min.js"></script>
+            <script src="./js/main.js"></script>
+</body>
+
+</html>
